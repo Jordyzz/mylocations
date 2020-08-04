@@ -1,0 +1,44 @@
+.wrapper {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 3px 5px -6px rgba(0, 0, 0, 0.75);
+  background-color: var(--backgroundSecondaryColor);
+  z-index: 1;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin: 0 20px;
+  font-size: 24px;
+  font-weight: 800;
+  max-width: 300px;
+}
+
+.actionBar {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 20px;
+
+  .routes {
+    display: flex;
+    margin-right: 20px;
+
+    .navLink {
+      text-decoration: none;
+      padding: 10px;
+      color: var(--fontColor);
+    }
+
+    .activeLink {
+      color: var(--selectedFontColor);
+    }
+  }
+}
+
+.themeBtn {
+  border-radius: 50%;
+  margin-left: auto;
+}
