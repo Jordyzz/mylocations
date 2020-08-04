@@ -7,7 +7,7 @@ import {
   setSelectedCategory,
   updateCategory
 } from '@redux/category';
-import { storageKeys } from '@src/utils/storageKeys';
+import { storageKeys } from '@core/storageKeys';
 import { Category } from '@src/redux/redux.interface';
 
 class CategoryService {

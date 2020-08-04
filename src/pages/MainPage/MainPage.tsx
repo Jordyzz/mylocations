@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 
 import styles from './MainPage.scss';
 import { useSelector } from '@redux/useSelector';
-import { categoryService } from '@core/CategoryService';
 import CategoryBlock from '@components/CategoryBlock';
 
 function MainPage() {

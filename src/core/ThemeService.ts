@@ -1,6 +1,7 @@
 import { getState, dispatch } from '@redux/store';
 import { setTheme } from '@src/redux/config';
 import { storageService } from './StorageService';
+import { storageKeys } from './storageKeys';
 
 class ThemeService {
   private themes = {
@@ -29,7 +30,7 @@ class ThemeService {
   };
 
   init(theme?: string) {
-    const selectedTheme = theme || storageService.get('theme');
+    const selectedTheme = theme || storageService.get(storageKeys.theme);
     Object.assign(this.vars, selectedTheme ? this.themes[selectedTheme] : this.themes.light);
     for (let key in this.vars) {
       this.setVariable(key, this.vars[key]);
@@ -42,7 +43,7 @@ class ThemeService {
     const activeTheme = getState().config.theme;
     const newTheme = activeTheme === 'light' ? 'dark' : 'light';
     this.init(newTheme);
-    storageService.set('theme', newTheme);
+    storageService.set(storageKeys.theme, newTheme);
   }
 
   private setVariable(key: string, value: string) {
