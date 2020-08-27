@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import Button from '@components/Button';
 import Select from '@components/Select';
@@ -18,12 +19,14 @@ const SortBar = ({
   return (
     <div className={styles.wrapper}>
       <div className={styles.sort}>
-        <Button className={styles.sortBtn} onClick={onSort}>
+        <Button className={classNames(styles.sortBtn, sort && styles.activeBtn)} onClick={onSort}>
           {sort === 'DESC' ? 'Z - A' : 'A - Z'}
         </Button>
       </div>
       <div className={styles.sort}>
-        <Button className={styles.groupByBtn} onClick={handleGroupBy}>
+        <Button
+          className={classNames(styles.groupByBtn, groupBy && styles.activeBtn)}
+          onClick={handleGroupBy}>
           Group by Category
         </Button>
       </div>

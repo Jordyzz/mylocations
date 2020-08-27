@@ -20,8 +20,7 @@ const customStyles = props => {
       ...provided,
       display: 'flex',
       marginLeft: 10,
-      color: 'var(--fontColor)',
-      fill: 'var(--fontColor)'
+      color: '#000'
     }),
     option: provided => ({
       ...provided,
