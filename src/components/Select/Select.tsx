@@ -29,7 +29,7 @@ const customStyles = props => {
     }),
     singleValue: provided => ({
       ...provided,
-      color: 'var(--fontColor)'
+      color: '#000'
     }),
     input: provided => ({
       ...provided,
@@ -39,14 +39,9 @@ const customStyles = props => {
 };
 
 function Select(props) {
-  const { onChange, onInputChanged, options, value, placeholder, isMulti = false } = props;
-
+  const { onChange, options, value, placeholder, isMulti = false } = props;
   const handleChange = newVal => {
     onChange(newVal);
-  };
-
-  const Placeholder = props => {
-    return <components.Placeholder {...props}>{props.children}</components.Placeholder>;
   };
 
   return (
@@ -54,10 +49,8 @@ function Select(props) {
       placeholder={placeholder || ''}
       className={styles.Select}
       onChange={handleChange}
-      components={{
-        Placeholder
-      }}
       options={options}
+      value={value}
       styles={customStyles(props)}
       isClearable={true}
       isMulti={isMulti}

@@ -16,12 +16,9 @@ const LocationBlock = (props: LocationBlockProps) => {
   };
 
   return (
-    <div
-      title={location.name}
-      className={classNames(styles.wrapper, 'ellipsis-overflow')}
-      {...{ onClick }}>
+    <div title={location.name} className={styles.wrapper} {...{ onClick }}>
       <div className={styles.header}>
-        {location.name}
+        <div className={'ellipsis-overflow'}>{location.name}</div>
         <Icon type="trash" className={styles.icon} onClick={handleDelete} />
       </div>
       <div className={styles.address}>{location.address}</div>

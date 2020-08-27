@@ -1,0 +1,40 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.label {
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+.sortBtn {
+  width: 60px;
+  height: 40px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.groupByBtn {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.clearBtn {
+  width: 80px;
+  height: 40px;
+  border-radius: 10px;
+  align-self: flex-end;
+  margin-left: 20px;
+  background-color: var(--selectedFontColor);
+}
+
+.select {
+  width: 150px;
+  margin-right: 20px;
+}
