@@ -23,12 +23,12 @@ const Map = (props: MapProps) => {
     <div className={styles.mapWrapper}>
       <ReactMapGL
         width={400}
-        height={350}
+        height={300}
         longitude={longitude}
         latitude={latitude}
         zoom={zoom}
-        onClick={e => onClick(e.lngLat[1], e.lngLat[0])}
-        mapStyle="mapbox://styles/mapbox/outdoors-v11"
+        onClick={onClick ? e => onClick(e.lngLat[1], e.lngLat[0]) : null}
+        mapStyle="mapbox://styles/jordyzz/ckecrlkrh2i8u1at74wvihuqp"
         mapboxApiAccessToken={mapboxKey}
         onViewportChange={handleViewportChange}>
         <Marker latitude={userLocation.latitude} longitude={userLocation.longitude}>

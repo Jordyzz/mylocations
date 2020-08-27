@@ -1,6 +1,6 @@
 export interface MapProps {
   userLocation: Coordinates;
-  onClick: (lat, lng) => void;
+  onClick?: (lat, lng) => void;
 }
 
 interface Coordinates {

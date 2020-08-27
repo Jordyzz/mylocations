@@ -31,6 +31,8 @@ class LocationService {
       .get(storageKeys.locations)
       .filter(c => c.name !== location.name);
     storageService.set(storageKeys.locations, locations);
+
+    history.push('/categories');
   }
 
   getLocationAddress(longitude: number, latitude: number): Promise<string> {

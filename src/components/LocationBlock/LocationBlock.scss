@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 250px;
-  height: 100px;
+  height: 120px;
   padding: 10px;
   background-color: var(--backgroundSecondaryColor);
   border-radius: 10px;
@@ -12,6 +12,18 @@
 
   &:first-child {
     margin-top: 0px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--fontColor);
+  padding-bottom: 5px;
+
+  .icon {
+    margin-left: auto;
+    fill: var(--fontColor);
   }
 }
 
