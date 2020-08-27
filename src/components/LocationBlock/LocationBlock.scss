@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 100px;
+  padding: 10px;
+  background-color: var(--backgroundSecondaryColor);
+  border-radius: 10px;
+  box-shadow: -2px 3px 10px -4px rgba(0, 0, 0, 0.75);
+  margin-top: 15px;
+  cursor: pointer;
+
+  &:first-child {
+    margin-top: 0px;
+  }
+}
+
+.address {
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}

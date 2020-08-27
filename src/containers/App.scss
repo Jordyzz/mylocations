@@ -3,3 +3,7 @@
   flex-direction: column;
   height: 100%;
 }
+
+.content {
+  height: calc(100% - 58px - 45px); // minutes top bar, and bottom section
+}

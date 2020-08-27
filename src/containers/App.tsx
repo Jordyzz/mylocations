@@ -8,6 +8,10 @@ import AppBar from '@components/AppBar';
 import styles from './App.scss';
 import CreateCategoryPage from '@pages/CreateCategoryPage';
 import CategoryPreviewPage from '@pages/CategoryPreviewPage';
+import RouteBar from '@components/RouteBar';
+import LocationsPage from '@pages/LocationsPage';
+import CreateLocationPage from '@pages/CreateLocationPage';
+import LocationPreviewPage from '@pages/LocationPreviewPage';
 
 function App() {
   return (
@@ -16,13 +20,17 @@ function App() {
         <AppBar />
         <div className={styles.content}>
           <Switch>
-            <Route path="/categories" component={MainPage} />
-            <Route path="/create" component={CreateCategoryPage} />
-            <Route path="/create/:name" component={CreateCategoryPage} />
-            <Route path="/category/:name" component={CategoryPreviewPage} />
+            <Route exact path="/categories/create" component={CreateCategoryPage} />
+            <Route path="/categories/create/:name" component={CreateCategoryPage} />
+            <Route path="/categories/:name" component={CategoryPreviewPage} />
+            <Route exact path="/categories" component={MainPage} />
+            <Route exact path="/locations/create" component={CreateLocationPage} />
+            <Route path="/locations/:name" component={LocationPreviewPage} />
+            <Route exact path="/locations" component={LocationsPage} />
             <Redirect to="/categories" />
           </Switch>
         </div>
+        <RouteBar />
       </div>
     </Router>
   );

@@ -3,7 +3,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
-module.exports = (env) => {
+module.exports = env => {
   const isProd = (env || {}).NODE_ENV === 'prod';
 
   return {
@@ -12,13 +12,13 @@ module.exports = (env) => {
     output: {
       path: path.join(__dirname, 'build'),
       filename: 'bundle.[hash].js',
-      publicPath: '/',
+      publicPath: '/'
     },
     devServer: {
       contentBase: path.join(__dirname, 'build'),
       historyApiFallback: true,
       compress: true,
-      port: 4646,
+      port: 4646
     },
     resolve: {
       alias: {
@@ -29,9 +29,10 @@ module.exports = (env) => {
         '@pages': path.resolve(path.join(__dirname, 'src/pages')),
         '@src': path.resolve(path.join(__dirname, 'src')),
         '@redux': path.resolve(path.join(__dirname, 'src/redux')),
-        '@root': __dirname,
+        '@utils': path.resolve(path.join(__dirname, 'src/utils')),
+        '@root': __dirname
       },
-      extensions: ['.ts', '.tsx', '.js', '.jsx', '.css', '.scss'],
+      extensions: ['.ts', '.tsx', '.js', '.jsx', '.css', '.scss']
     },
     module: {
       rules: [
@@ -39,14 +40,14 @@ module.exports = (env) => {
           test: /\.ts(x?)$/,
           exclude: /node_modules/,
           loader: 'ts-loader',
-          options: { transpileOnly: true },
+          options: { transpileOnly: true }
         },
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: {
-            loader: 'babel-loader',
-          },
+            loader: 'babel-loader'
+          }
         },
         // Scoped SCSS for components.
         {
@@ -58,17 +59,17 @@ module.exports = (env) => {
               loader: 'css-loader',
               options: {
                 modules: {
-                  localIdentName: isProd ? '[hash:base64:10]' : '[name]_[local]-[hash:base64:5]',
+                  localIdentName: isProd ? '[hash:base64:10]' : '[name]_[local]-[hash:base64:5]'
                 },
-                localsConvention: 'camelCase',
-              },
+                localsConvention: 'camelCase'
+              }
             },
             {
               loader: 'postcss-loader',
-              options: { plugins: [require('autoprefixer')] },
+              options: { plugins: [require('autoprefixer')] }
             },
-            'sass-loader',
-          ],
+            'sass-loader'
+          ]
         },
         // Global SCSS for global styles (should be in global-scss folder)
         {
@@ -79,32 +80,32 @@ module.exports = (env) => {
             'css-loader',
             {
               loader: 'postcss-loader',
-              options: { plugins: [require('autoprefixer')] },
+              options: { plugins: [require('autoprefixer')] }
             },
-            'sass-loader',
-          ],
+            'sass-loader'
+          ]
         },
         {
           test: /\.css$/,
-          use: ['style-loader', 'css-loader'],
+          use: ['style-loader', 'css-loader']
         },
         {
           test: /\.html$/,
           use: [
             {
-              loader: 'html-loader',
-            },
-          ],
-        },
-      ],
+              loader: 'html-loader'
+            }
+          ]
+        }
+      ]
     },
     plugins: [
       new ForkTsCheckerWebpackPlugin(),
       new MiniCssExtractPlugin({}),
       new HtmlWebPackPlugin({
         template: './src/index.html',
-        filename: './index.html',
-      }),
-    ],
+        filename: './index.html'
+      })
+    ]
   };
 };

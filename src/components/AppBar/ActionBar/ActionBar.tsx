@@ -20,13 +20,13 @@ const ActionBar = (props: ActionBarProps) => {
     <div className={classNames(styles.wrapper, category && styles.active)}>
       <Button
         title="Preview"
-        onClick={() => history.push(`/category/${category.name}`)}
+        onClick={() => history.push(`/categories/${category.name}`)}
         className={styles.actionBtn}>
         <Icon type="preview" />
       </Button>
       <Button
         title="Edit"
-        onClick={() => history.push(`/create/${category.name}`, category)}
+        onClick={() => history.push(`/categories/create/${category.name}`, category)}
         className={styles.actionBtn}>
         <Icon type="edit" />
       </Button>

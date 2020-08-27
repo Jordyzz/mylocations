@@ -12,3 +12,7 @@ body,
   background-color: var(--backgroundColor);
   font-family: 'Gill Sans, sans-serif';
 }
+
+a:-webkit-any-link {
+  text-decoration: none;
+}

@@ -7,6 +7,8 @@
   background-color: var(--backgroundSecondaryColor);
   z-index: 1;
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
 }
 
 .title {

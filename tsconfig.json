@@ -15,6 +15,7 @@
       "@pages/*": ["src/pages/*"],
       "@src/*": ["src/*"],
       "@redux/*": ["src/redux/*"],
+      "@utils/*": ["src/utils/*"],
       "@root/*": ["./*"]
     },
     "lib": ["dom", "es7"]

@@ -5,12 +5,17 @@ import store from '@redux/store';
 import App from './App';
 import { themeService } from '@core/ThemeService';
 import { categoryService } from '@core/CategoryService';
+import { locationService } from '@core/LocationService';
 
 function Root() {
   const [showApp, setShowApp] = useState(false);
 
   useEffect(() => {
-    Promise.all([categoryService.initCategories(), themeService.init()]).then(() => {
+    Promise.all([
+      locationService.initLocations(),
+      categoryService.initCategories(),
+      themeService.init()
+    ]).then(() => {
       setShowApp(true);
     });
   }, []);

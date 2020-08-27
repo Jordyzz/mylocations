@@ -6,6 +6,7 @@ import { categoryService } from '@core/CategoryService';
 import { Category } from '@redux/redux.interface';
 import Button from '@components/Button';
 import { useSelector } from '@redux/useSelector';
+import TextInput from '@components/TextInput';
 
 const CreateCategoryPage = () => {
   const category = history.location.state as Category;
@@ -39,7 +40,7 @@ const CreateCategoryPage = () => {
 
   return (
     <div className={styles.wrapper}>
-      <input type="text" value={categoryName} onChange={onChange} className={styles.catInput} />
+      <TextInput value={categoryName} onChange={onChange} />
       <Button className={styles.createBtn} onClick={handleClick}>
         {category ? 'Update Category' : 'Create Category'}
       </Button>
